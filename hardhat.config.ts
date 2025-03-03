@@ -144,6 +144,16 @@ const config: HardhatUserConfig = {
       url: vars.get("ARBITRUM_NOVA_URL", "https://nova.arbitrum.io/rpc"),
       accounts,
     },
+    animeSepolia: {
+      chainId: 6900,
+      url: vars.get("ANIME_SEPOLIA_URL", "https://rpc-animechain-testnet-i8yja6a1a0.t.conduit.xyz"),
+      accounts,
+    },
+    animeMain: {
+      chainId: 69000,
+      url: vars.get("ANIME_MAINNET_URL", "https://rpc-animechain-39xf6m45e3.t.conduit.xyz"),
+      accounts,
+    },
     amoy: {
       chainId: 80002,
       url: vars.get(
@@ -935,6 +945,8 @@ const config: HardhatUserConfig = {
     apiKey: {
       // For Ethereum testnets & mainnet
       mainnet: vars.get("ETHERSCAN_API_KEY", ""),
+      animeSepolia: vars.get("ETHERSCAN_API_KEY", "empty"),
+      animeMain: vars.get("ETHERSCAN_API_KEY", "empty"),
       goerli: vars.get("ETHERSCAN_API_KEY", ""),
       sepolia: vars.get("ETHERSCAN_API_KEY", ""),
       holesky: vars.get("ETHERSCAN_API_KEY", ""),
@@ -1144,6 +1156,22 @@ const config: HardhatUserConfig = {
       arenazTestnet: vars.get("ARENAZ_API_KEY", ""),
     },
     customChains: [
+      {
+        network: "animeSepolia",
+        chainId: 6900,
+        urls: {
+          apiURL: "https://explorer-animechain-testnet-i8yja6a1a0.t.conduit.xyz/api",
+          browserURL: "https://explorer-animechain-testnet-i8yja6a1a0.t.conduit.xyz:443"
+        }
+      },
+      {
+        network: "animeMain",
+        chainId: 69000,
+        urls: {
+          apiURL: "https://explorer-animechain-39xf6m45e3.t.conduit.xyz/api",
+          browserURL: "https://explorer-animechain-39xf6m45e3.t.conduit.xyz:443"
+        }
+      },
       {
         network: "holesky",
         chainId: 17000,
